@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% if (!products || products.length < 1) { %>
+     <p>error</p>
+    <% } else { %>
+        <a href="/contact/<%= products._id %>">Back</a>
+        <form action="/details/update" method="post" style="display: flex; flex-direction: column; width: fit-content; gap: 2vh;">
+            <label for="name">Nama: </label>
+            <input type="text" name="name" id="name" required value="<%= products.name %>">
+            <label for="harga">Harga: </label>
+            <input type="text" name="harga" id="harga" required value="<%= products.harga %>">
+            <input type="hidden" name="id" value="<%= products._id %>">
+            <button type="submit">Send</button>
+        </form>
+    <% } %>
+</body>
+</html>
