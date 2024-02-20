@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <a href="/">Home</a>
+    <a style="margin-bottom: 8vh;text-decoration: none;" href="/">Home</a>
     <% if (!products || products.length < 1) { %>
         <p>kontol</p>
     <% } else { %>
-        <ul style="display: flex;flex-direction: column;gap: 2vh;">
+        <ul style="display: flex;flex-direction: column;gap: 2vh; width: fit-content; height: fit-content; padding: 4vw;">
             <li>Nama Produk: <%= products.name %></li>
             <li>Harga Produk: Rp.<%= products.harga %></li>
-            <a href="/details/update/<%= products._id %>">Update</a>
-            <form action="/details/delete/<%= products._id %>" method="post">
-            <button type="submit">Delete</button>
+            <a style="color: #00cec9;font-style: normal;text-decoration: none;font-size: 18px; width: fit-content ;background: none;border: none;cursor: pointer;" href="/details/update/<%= products._id %>">Update</a>
+            <form style="border: none; display: flex; padding: 0;" action="/details/delete/<%= products._id %>" method="post">
+            <button style="color: #ff7675;font-size: 18px; padding: 0; width: fit-content; background: none;" type="submit">Delete</button>
             </form>
 
         </ul>

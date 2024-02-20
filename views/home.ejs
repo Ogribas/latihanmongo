@@ -4,18 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
-    <% if (!products.length < 1 || !products) { %>
-        <ul>
-     <% products.forEach((element,i) => { %>
-        <li>Produk <%= i+=1 %>:<%= element.name %></li>
-        <li>Id: <%= element._id %></li>
-        <a href="/contact/<%= element._id %>">Details</a>
-        <% }) %>
-    </ul>
-    <% } %>
+  <h1 style="font-size: 4vw;">Protopler Inventori Parfum.</h1>
 
     <form action="/home" method="post" style="display: flex; flex-direction: column; width: fit-content; gap: 2vh;">
         <label for="name">Nama: </label>
@@ -24,6 +17,15 @@
         <input type="text" name="harga" id="harga" required>
         <button type="submit">Send</button>
     </form>
+
+    <% if (!products.length < 1 || !products) { %>
+        <% products.forEach((element,i) => { %>
+            <ul>
+        <li>Produk <%= i+=1 %>: <%= element.name %></li>
+        <a href="/contact/<%= element._id %>">Details</a>
+        </ul>
+        <% }) %>
+    <% } %>
 
 </body>
 </html>

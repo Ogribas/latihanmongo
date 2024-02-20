@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <% if (!products || products.length < 1) { %>
      <p>error</p>
     <% } else { %>
-        <a href="/contact/<%= products._id %>">Back</a>
+        <a style="text-decoration: none; margin-bottom: 20vh;" href="/contact/<%= products._id %>">Back</a>
         <form action="/details/update" method="post" style="display: flex; flex-direction: column; width: fit-content; gap: 2vh;">
             <label for="name">Nama: </label>
             <input type="text" name="name" id="name" required value="<%= products.name %>">

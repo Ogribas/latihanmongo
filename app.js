@@ -11,6 +11,7 @@ const port = 3000;
 // Middleware
 // app.use(expressLayouts);
 app.use(express.urlencoded({extended:true}))
+app.use(express.static('public'))
 
 // View Engine
 app.set(`view engine`,'ejs');
